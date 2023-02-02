@@ -31,14 +31,14 @@ function Showcase() {
             </Link>
           </div>
           <span className="mx-2 mb-10 text-center text-sm font-medium text-zinc-700">
-            To test the app without an account{" "}
+            To test the app without creating an account{" "}
             <Link to="" className="text-sky-600 hover:underline">
               press here
             </Link>
           </span>
           <div className="border-t border-gray-400 px-3 pt-5">
             Already have an account?{" "}
-            <Link to="" className="text-sky-600 hover:underline">
+            <Link to="/login" className="text-sky-600 hover:underline">
               Log in
             </Link>
           </div>
