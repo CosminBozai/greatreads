@@ -24,7 +24,7 @@ function Showcase() {
               Continue with Google
             </Link>
             <Link
-              to="#"
+              to="/register"
               className="mb-5 flex h-12 w-64 items-center justify-center rounded bg-brown text-white  hover:brightness-125 "
             >
               Sign up with Email
