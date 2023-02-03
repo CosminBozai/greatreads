@@ -14,7 +14,7 @@ function Showcase() {
       </div>
       <main className="mx-auto my-0 flex max-w-4xl flex-col items-center justify-between px-6 md:flex-row-reverse md:items-start">
         {/* Authentication */}
-        <section className="mb-10 flex  flex-col items-center rounded-xl border  border-neutral-300 py-8 px-2">
+        <section className="mb-10 flex w-80  flex-col items-center rounded-xl border  border-neutral-300 py-8 px-2">
           <h1 className="mb-6 text-lg font-medium">Discover & read more</h1>
           <div>
             <Link
@@ -30,7 +30,7 @@ function Showcase() {
               Sign up with Email
             </Link>
           </div>
-          <span className="mx-2 mb-10 text-center text-sm font-medium text-zinc-700">
+          <span className="mx-2 mb-10 text-center text-zinc-700">
             To test the app without creating an account{" "}
             <Link to="" className="text-sky-600 hover:underline">
               press here

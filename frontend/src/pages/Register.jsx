@@ -54,13 +54,13 @@ function Register() {
             className="rounded-2xl border border-zinc-500 bg-gray-50 px-4 py-1 outline-none hover:bg-gray-100 focus:border-blue-700 focus:bg-white focus:shadow-around"
           />
         </fieldset>
-        <div className="mb-10 cursor-pointer rounded-2xl border bg-brown py-2 text-center text-white hover:brightness-125">
+        <div className="mb-10 h-9 cursor-pointer rounded-2xl border bg-brown py-1 text-center text-white hover:brightness-125">
           Create account
         </div>
       </form>
       <p>
         Already have an account?{" "}
-        <Link to="/login" className="underline">
+        <Link to="/login" className="underline hover:text-sky-800">
           Sign in
         </Link>
       </p>
