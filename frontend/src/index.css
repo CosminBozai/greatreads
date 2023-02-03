@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .sidebar-li {
+    @apply cursor-pointer rounded-lg p-3 hover:bg-gray-100;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

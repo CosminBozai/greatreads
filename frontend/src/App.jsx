@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Showcase from "./pages/Showcase";
@@ -10,6 +11,7 @@ function App() {
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
   );
