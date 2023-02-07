@@ -1,5 +1,6 @@
 import React from "react";
 import noCover from "../assets/no-cover.jpg";
+import Rating from "./Rating";
 
 function Book() {
   return (
@@ -13,7 +14,10 @@ function Book() {
         <p className="text-lg font-semibold">Titlu de carte</p>
         <p>by Cosmin Bozai</p>
         <p>4.22 average rating</p>
-        <p className="font-semibold">You rated it 5 5 5 5 5 </p>
+        <div className="flex items-center">
+          <span className="font-semibold">You rated it </span>
+          <Rating />
+        </div>
         <select
           name="shelf-list"
           id="shelf-list"
