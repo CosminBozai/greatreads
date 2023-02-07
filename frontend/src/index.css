@@ -4,7 +4,7 @@
 
 @layer components {
   .sidebar-li {
-    @apply cursor-pointer rounded-lg p-3 hover:bg-gray-100;
+    @apply mb-1 cursor-pointer rounded-lg p-3 hover:bg-gray-100;
   }
 }
 

@@ -17,11 +17,11 @@ function HamburgerMenu() {
         <span></span>
       </div>
       <div
-        className={`flex ${
-          open ? "opacity-1" : "opacity-0"
+        className={`${
+          open ? "opacity-1 flex" : " hidden opacity-0"
         } absolute top-12 left-0 z-10 h-[calc(100vh-_48px)] w-full transition-opacity duration-150 ease-in`}
       >
-        <div className="h-full w-2/3 ">
+        <div className="h-full w-2/3 bg-white px-3 py-4">
           <Sidebar />
         </div>
         <div className="h-full w-1/3 bg-gray-200 opacity-50"></div>

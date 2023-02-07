@@ -16,7 +16,7 @@ function Login() {
           <input
             type="text"
             name="email"
-            className="rounded-2xl border border-zinc-500 bg-gray-50 px-4 py-1 outline-none hover:bg-gray-100 focus:border-blue-700 focus:bg-white focus:shadow-around"
+            className="rounded-2xl border border-zinc-500 bg-gray-50 px-4 py-1 outline-none hover:bg-gray-100 focus:border-blue-700 focus:bg-white focus:shadow-aroundBlue"
           />
         </fieldset>
         <fieldset className="mb-5 flex flex-col">
@@ -27,7 +27,7 @@ function Login() {
           <input
             type="text"
             name="password"
-            className="rounded-2xl border border-zinc-500 bg-gray-50 px-4 py-1 outline-none hover:bg-gray-100 focus:border-blue-700 focus:bg-white focus:shadow-around"
+            className="rounded-2xl border border-zinc-500 bg-gray-50 px-4 py-1 outline-none hover:bg-gray-100 focus:border-blue-700 focus:bg-white focus:shadow-aroundBlue"
           />
         </fieldset>
         <div className="mb-14 h-9 cursor-pointer rounded-2xl border bg-brown py-1 text-center text-white hover:brightness-125">
