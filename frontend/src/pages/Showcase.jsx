@@ -32,7 +32,7 @@ function Showcase() {
           </div>
           <span className="mx-2 mb-10 text-center text-zinc-700">
             To test the app without creating an account{" "}
-            <Link to="" className="text-sky-600 hover:underline">
+            <Link to="/" className="text-sky-600 hover:underline">
               press here
             </Link>
           </span>

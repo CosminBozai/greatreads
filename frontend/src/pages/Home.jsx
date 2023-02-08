@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Book from "../components/Book";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
@@ -18,7 +19,9 @@ function Home() {
         <div className="flex w-full flex-col sm:w-3/4">
           {booksList}
           <button className="mb-24 mt-5 w-36 self-center border border-gray-800 bg-lightBrown py-1 text-lg text-white sm:ml-24 sm:self-start">
-            + Book
+            <Link to="/add-book" className="block w-full">
+              + Book
+            </Link>
           </button>
         </div>
       </div>
