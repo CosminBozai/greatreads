@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { animated, useSpring } from "react-spring";
+import axios from "axios";
 
 const transitionInterval = 10000;
 
@@ -23,19 +24,19 @@ function Quote() {
 
   useEffect(() => {
     const getRandomQuote = async () => {
-      const res = await fetch(
-        `https://dummyjson.com/users/${randomIntFromInterval(1, 100)}`
-      );
-      const { firstName, userAgent, image } = await res.json();
-      setQuoteData({ firstName, userAgent, image });
+      const res = await axios.get("/api/quote");
+      console.log(res.data[0]);
+      const { author, text, image } = res.data[0];
+      setQuoteData({ author, text, image });
     };
     getRandomQuote();
     const getInterval = setInterval(getRandomQuote, transitionInterval);
     // Stop the calls when element unmounts
     return () => clearInterval(getInterval);
   }, []);
+
   return (
-    <div>
+    <div className="mb-32 md:mb-0">
       <h2 className="mb-4 text-xl font-medium">Quotes</h2>
       <animated.div
         className="flex"
@@ -52,8 +53,8 @@ function Quote() {
           className="mr-2 h-16 w-14"
         />
         <div>
-          <p className="text-gray-900">{quoteData.userAgent}</p>
-          <p className="font-semibold text-gray-900">- {quoteData.firstName}</p>
+          <p className="text-gray-900">{quoteData.author}</p>
+          <p className="font-semibold text-gray-900">- {quoteData.text}</p>
         </div>
       </animated.div>
     </div>
