@@ -36,7 +36,7 @@ function Quote() {
   }, []);
 
   return (
-    <div className="mb-32 md:mb-0">
+    <div className="mb-20 h-48 md:mb-0">
       <h2 className="mb-4 text-xl font-medium">Quotes</h2>
       <animated.div
         className="flex"
