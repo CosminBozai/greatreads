@@ -53,8 +53,8 @@ function Quote() {
           className="mr-2 h-16 w-14"
         />
         <div>
-          <p className="text-gray-900">{quoteData.author}</p>
-          <p className="font-semibold text-gray-900">- {quoteData.text}</p>
+          <p className="text-gray-900">{quoteData.text}</p>
+          <p className="font-semibold text-gray-900">- {quoteData.author}</p>
         </div>
       </animated.div>
     </div>
