@@ -5,9 +5,8 @@ const getRandomQuote = asyncHandler(async (req, res) => {
   try {
     // Get random quote
     const quote = await Quote.aggregate([{ $sample: { size: 1 } }]);
-    res.status(200).send(quote);
+    res.status(200).json(quote);
   } catch (err) {
-    console.log(err);
     res.send(404);
   }
 });
