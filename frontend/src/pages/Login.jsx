@@ -30,9 +30,9 @@ function Login() {
             className="rounded-2xl border border-zinc-500 bg-gray-50 px-4 py-1 outline-none hover:bg-gray-100 focus:border-blue-700 focus:bg-white focus:shadow-aroundBlue"
           />
         </fieldset>
-        <div className="mb-14 h-9 cursor-pointer rounded-2xl border bg-brown py-1 text-center text-white hover:brightness-125">
+        <button className="mb-14 h-9 w-full cursor-pointer rounded-2xl border bg-brown py-1 text-center text-white hover:brightness-125">
           Log in
-        </div>
+        </button>
       </form>
       <div className="relative border-t border-t-brown ">
         <p className="absolute -top-3 left-[50%] -translate-x-[50%] bg-white  px-2">
