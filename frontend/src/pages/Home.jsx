@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Book from "../components/Book";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
+import useAuthContext from "../hooks/useAuthContext";
 
 //TODO: Make logic for fetching books, updating rating, adding books etc
 
 function Home() {
+  const { user } = useAuthContext();
   const booksArr = [0, 1, 2, 3, 4];
   const booksList = booksArr.map((book, i) => <Book key={i} />);
   return (
     <>
-      <Header />
+      <Header name={user.name} />
       <div className="mx-auto my-0 flex max-w-7xl sm:p-8">
         <section className="mr-8 hidden h-[calc(100vh-_48px)] w-1/4 sm:block">
           <Sidebar />

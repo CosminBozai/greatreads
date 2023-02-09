@@ -21,7 +21,7 @@ const useLogin = () => {
         { headers: { "Content-Type": "application/json" } }
       );
 
-      localStorage.setItem("user", response.data);
+      localStorage.setItem("user", JSON.stringify(response.data));
 
       dispatch({ type: "LOGIN", payload: response.data });
 

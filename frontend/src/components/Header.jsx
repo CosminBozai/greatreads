@@ -3,7 +3,7 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 import HamburgerMenu from "./HamburgerMenu";
 import logo from "../assets/greatreads.png";
 
-function Header() {
+function Header({ name }) {
   const { width } = useWindowDimensions();
   const [image, setImage] = useState(null);
   useEffect(() => {
@@ -39,7 +39,7 @@ function Header() {
             className="w-3/5 max-w-sm  rounded-sm border border-gray-300 px-2 py-1 outline-none focus:border-gray-500 focus:shadow-aroundGray"
           />
           <div className="flex w-24 items-center justify-between">
-            <span>Cosmin</span>
+            <span>{name}</span>
             <div className="h-9 rounded-full bg-white">
               <img src={image} alt="profile-pic" className="h-full" />
             </div>
