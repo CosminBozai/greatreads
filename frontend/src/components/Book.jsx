@@ -1,19 +1,17 @@
 import React from "react";
-import noCover from "../assets/no-cover.jpg";
 import Rating from "./Rating";
 
-function Book() {
+function Book({ title, author, cover }) {
   return (
     <div className="flex items-center border-b py-2 px-6">
       <img
         className="mr-6 h-28 w-16 border border-black object-cover"
-        src={noCover}
+        src={cover}
         alt="cover"
       />
       <div>
-        <p className="text-lg font-semibold">Titlu de carte</p>
-        <p>by Cosmin Bozai</p>
-        <p>4.22 average rating</p>
+        <p className="text-lg font-semibold">{title}</p>
+        <p>{author}</p>
         <div className="flex items-center">
           <span className="font-semibold">You rated it </span>
           <Rating />

@@ -13,6 +13,12 @@ const userSchema = new Schema({
     required: true,
   },
   password: String,
+  library: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Book",
+    },
+  ],
 });
 
 // signup method

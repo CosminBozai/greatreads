@@ -7,26 +7,16 @@ const bookSchema = new Schema({
   title: String,
   author: String,
   cover: String,
-  totalRating: Number,
-  ratingsNumber: Number,
-  averageRating: Number,
+  rating: Number,
 });
 
-bookSchema.statics.newBook = async function (
-  title,
-  author,
-  cover,
-  totalRating = 0,
-  ratingsNumber = 0
-) {
+bookSchema.statics.newBook = async function (title, author, cover, rating = 0) {
   if (!title || !author) throw new Error("All fields are required");
-  cover = fs.readFileSync("./assets/no-cover.jpg");
   const book = this.create({
     title,
     author,
     cover,
-    totalRating,
-    ratingsNumber,
+    rating,
   });
   return book;
 };

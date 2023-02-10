@@ -1,13 +1,17 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import useAuthContext from "../hooks/useAuthContext";
 import noCover from "../assets/no-cover.jpg";
 
 function AddBook() {
-  const [cover, setCover] = useState(null);
+  const [cover, setCover] = useState(noCover);
   const [title, setTitle] = useState(null);
   const [author, setAuthor] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const { user } = useAuthContext();
 
   const handleAddBook = async () => {
     setIsLoading(true);
@@ -20,10 +24,16 @@ function AddBook() {
           author,
           cover,
         },
-        { headers: { "Content-Type": "application/json" } }
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
       );
 
       setIsLoading(false);
+      navigate("/");
     } catch (err) {
       console.log(err);
       setIsLoading(false);

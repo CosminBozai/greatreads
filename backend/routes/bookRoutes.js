@@ -1,8 +1,13 @@
 import express from "express";
-import { createNewBook } from "../controllers/bookController.js";
+import {
+  addNewBook,
+  getBooksInLibrary,
+} from "../controllers/bookController.js";
+import requireAuth from "../middleware/requireAuth.js";
 
 const bookRouter = express.Router();
 
-bookRouter.route("/").post(createNewBook);
+bookRouter.use(requireAuth);
+bookRouter.route("/").get(getBooksInLibrary).post(addNewBook);
 
 export default bookRouter;
