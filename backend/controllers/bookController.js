@@ -25,4 +25,14 @@ const getBooksInLibrary = async (req, res) => {
   }
 };
 
-export { addNewBook, getBooksInLibrary };
+const deleteBook = async (req, res) => {
+  const _id = req.params.id;
+  try {
+    await Book.deleteOne({ _id: _id });
+    res.json(200);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export { addNewBook, getBooksInLibrary, deleteBook };

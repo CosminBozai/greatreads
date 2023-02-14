@@ -1,7 +1,18 @@
+import axios from "axios";
 import React from "react";
+import useAuthContext from "../hooks/useAuthContext";
 import Rating from "./Rating";
 
-function Book({ title, author, cover }) {
+function Book({ title, author, cover, id }) {
+  const { user } = useAuthContext();
+
+  const deleteBook = () => {
+    axios.delete(`api/book/${id}`, {
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+    });
+  };
   return (
     <div className="flex items-center border-b py-2 px-6">
       <img
@@ -27,7 +38,10 @@ function Book({ title, author, cover }) {
           <option value="dropped">Dropped</option>
           <option value="on-hold">On hold</option>
         </select>
-        <button className="bg-red-200 px-3 py-1 font-medium text-red-600 hover:brightness-105">
+        <button
+          onClick={deleteBook}
+          className="bg-red-200 px-3 py-1 font-medium text-red-600 hover:brightness-105"
+        >
           Delete
         </button>
       </div>
