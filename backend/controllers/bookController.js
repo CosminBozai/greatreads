@@ -29,9 +29,9 @@ const deleteBook = async (req, res) => {
   const _id = req.params.id;
   try {
     await Book.deleteOne({ _id: _id });
-    res.json(200);
+    res.status(200).json("deleted");
   } catch (err) {
-    console.log(err);
+    res.status(400);
   }
 };
 
