@@ -1,28 +1,42 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import HamburgerMenu from "../components/HamburgerMenu";
+import { CgProfile } from "react-icons/cg";
+import { BiLogOut } from "react-icons/bi";
+import "../styles/Sidebar.scss";
 
 function Sidebar() {
-  useEffect(() => {
-    const addActiveClass = () => {
-      const sidebarList = document.querySelector("#sidebar-list");
-      const listEl = sidebarList.querySelectorAll("li");
-      sidebarList.addEventListener("click", (e) => {
-        listEl.forEach((li) => li.classList.remove("bg-amber-200"));
-        if (e.target.nodeName === "LI") e.target.classList.add("bg-amber-200");
-      });
-    };
-    addActiveClass();
-  }, []);
-
+  const [open, setOpen] = useState(false);
   return (
-    <ul id="sidebar-list" className="w-full">
-      <div className="mb-4 text-lg font-medium">Bookshelves</div>
-      <li className="sidebar-li bg-amber-200">All books</li>
-      <li className="sidebar-li">Read</li>
-      <li className="sidebar-li">Currently reading</li>
-      <li className="sidebar-li">To read</li>
-      <li className="sidebar-li">Dropped</li>
-      <li className="sidebar-li">On hold</li>
-    </ul>
+    <div className={`sidebar-container ${open ? "" : "closed"}`}>
+      <div className="sidebar">
+        <HamburgerMenu open={open} setOpen={setOpen} />
+        <section className="profile-container">
+          <div className="profile-photo"></div>
+          <p className="welcome-msg">Welcome Back</p>
+          <p className="name">Cosmin</p>
+        </section>
+        <nav className="sidebar-nav">
+          <Link className="link" to="/profile">
+            <CgProfile size={20} />
+            <span>Profile</span>
+          </Link>
+          <Link className="link" to="/profile">
+            <BiLogOut size={20} />
+            <span>Log out</span>
+          </Link>
+          <h2>Bookshelves</h2>
+          <button className="bookshelf-btn selected">All books</button>
+          <button className="bookshelf-btn">Reading</button>
+          <button className="bookshelf-btn">Read</button>
+          <button className="bookshelf-btn">To read</button>
+        </nav>
+        <footer className="credit">
+          Made by <span>Bozai Cosmin</span>
+        </footer>
+      </div>
+      <div className="overscreen"></div>
+    </div>
   );
 }
 

@@ -1,7 +1,7 @@
 #menu {
   display: inline-block;
   width: 25px;
-  height: 100%;
+  height: 20px;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -33,13 +33,22 @@
   transition: 0.25s ease-in-out;
 }
 
+#menu {
+  align-self: center;
+}
+
+#menu.open {
+  align-self: auto;
+  margin-left: 0.5rem;
+}
+
 #menu span:nth-child(1) {
-  top: 16px;
+  top: 0px;
 }
 
 #menu span:nth-child(2),
 #menu span:nth-child(3) {
-  top: 24px;
+  top: 8px;
 }
 
 #menu span:nth-child(3) {
@@ -47,11 +56,11 @@
 }
 
 #menu span:nth-child(4) {
-  top: 32px;
+  top: 16px;
 }
 
 #menu.open span:nth-child(1) {
-  top: 18px;
+  top: 0px;
   width: 0%;
   left: 50%;
 }
