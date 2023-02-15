@@ -5,15 +5,17 @@
   transition: width 0.15s ease-in-out;
 }
 
-// Sidebar styles when in closed state
-.sidebar-container.closed {
-  width: 15vw;
-  .overscreen {
-    display: none;
-  }
-  .sidebar * {
-    // the hamburger has display: block set to it so it's not disappearing
-    display: none;
+@media (max-width: 639px) {
+  // Sidebar styles when in closed state
+  .sidebar-container.closed {
+    width: 15vw;
+    .overscreen {
+      display: none;
+    }
+    .sidebar * {
+      // the hamburger has display: block set to it so it's not disappearing
+      display: none;
+    }
   }
 }
 
@@ -23,32 +25,36 @@
   padding: 1rem 0;
   background-color: rgb(243, 243, 243);
   height: 100%;
-  width: 60%;
+  width: min(240px, 60%);
 }
 
 .overscreen {
   background-color: rgba(236, 236, 236, 0.3);
   height: 100%;
-  width: 40%;
+  width: max(40%, calc(100% - 240px));
 }
 
 .profile-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin: 1rem 0;
   padding: 1.5rem 0;
-  background-color: rgb(207, 207, 207);
+  border-radius: 0 2rem 2rem 0;
+  background-color: rgb(196, 196, 196);
   width: 100%;
   height: 30%;
 }
 
-.profile-photo {
-  background-color: white;
-  border-radius: 0.5rem;
+.profile-photo-wrapper {
   width: 100px;
   height: 100px;
+  img {
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .welcome-msg {
@@ -79,7 +85,7 @@
   }
   h2 {
     margin: 1.5rem 0 1rem 0;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 500;
   }
 }
@@ -101,7 +107,8 @@
 }
 
 .credit {
-  margin: 2rem 3rem;
+  width: fit-content;
+  margin: 2rem auto;
   font-weight: 500;
   span {
     margin-left: 1rem;
@@ -109,5 +116,19 @@
     font-weight: 700;
     font-size: 1.25rem;
     white-space: nowrap;
+  }
+}
+
+@media (min-width: 640px) {
+  #menu {
+    display: none;
+  }
+  .sidebar {
+    background-color: white;
+    // TODO: remove this border after styling the Home page
+    border-right: 1px solid black;
+  }
+  .overscreen {
+    display: none;
   }
 }

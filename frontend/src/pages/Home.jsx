@@ -32,7 +32,7 @@ function Home() {
   ));
   return (
     <div>
-      <Sidebar />
+      <Sidebar name={user.name} books={books} />
     </div>
   );
 }
